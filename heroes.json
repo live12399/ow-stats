@@ -4,29 +4,29 @@
             "id": "dva",
             "name": "D.Va",
             "role": "TANK",
-            "winRate": 48.6,
-            "pickRate": 7.6
+            "winRate": 48.8,
+            "pickRate": 7.8
         },
         {
             "id": "genji",
             "name": "겐지",
             "role": "DAMAGE",
             "winRate": 51.8,
-            "pickRate": 13.4
+            "pickRate": 13.5
         },
         {
             "id": "domina",
             "name": "도미나",
             "role": "TANK",
-            "winRate": 54.8,
-            "pickRate": 17.8
+            "winRate": 54.7,
+            "pickRate": 16.7
         },
         {
             "id": "doomfist",
             "name": "둠피스트",
             "role": "TANK",
-            "winRate": 52.1,
-            "pickRate": 6.4
+            "winRate": 52.2,
+            "pickRate": 6.5
         },
         {
             "id": "ramattra",
@@ -46,7 +46,7 @@
             "id": "reinhardt",
             "name": "라인하르트",
             "role": "TANK",
-            "winRate": 49.2,
+            "winRate": 49.1,
             "pickRate": 8.1
         },
         {
@@ -60,57 +60,57 @@
             "id": "roadhog",
             "name": "로드호그",
             "role": "TANK",
-            "winRate": 40.4,
-            "pickRate": 4
+            "winRate": 40.5,
+            "pickRate": 4.1
         },
         {
             "id": "lucio",
             "name": "루시우",
             "role": "SUPPORT",
-            "winRate": 47.2,
-            "pickRate": 5.3
+            "winRate": 47.4,
+            "pickRate": 5.4
         },
         {
             "id": "reaper",
             "name": "리퍼",
             "role": "DAMAGE",
             "winRate": 51.4,
-            "pickRate": 10.5
+            "pickRate": 10.7
         },
         {
             "id": "mauga",
             "name": "마우가",
             "role": "TANK",
-            "winRate": 46,
+            "winRate": 46.1,
             "pickRate": 3
         },
         {
             "id": "mercy",
             "name": "메르시",
             "role": "SUPPORT",
-            "winRate": 46.7,
+            "winRate": 46.6,
             "pickRate": 9.4
         },
         {
             "id": "mei",
             "name": "메이",
             "role": "DAMAGE",
-            "winRate": 50.2,
+            "winRate": 50.1,
             "pickRate": 5.7
         },
         {
             "id": "moira",
             "name": "모이라",
             "role": "SUPPORT",
-            "winRate": 47.7,
-            "pickRate": 14.1
+            "winRate": 47.6,
+            "pickRate": 14.3
         },
         {
             "id": "mizuki",
             "name": "미즈키",
             "role": "SUPPORT",
             "winRate": 53.3,
-            "pickRate": 30.5
+            "pickRate": 29.3
         },
         {
             "id": "bastion",
@@ -123,57 +123,57 @@
             "id": "baptiste",
             "name": "바티스트",
             "role": "SUPPORT",
-            "winRate": 45.5,
-            "pickRate": 7.9
+            "winRate": 45.4,
+            "pickRate": 7.8
         },
         {
             "id": "vendetta",
             "name": "벤데타",
             "role": "DAMAGE",
-            "winRate": 54,
+            "winRate": 54.1,
             "pickRate": 5
         },
         {
             "id": "venture",
             "name": "벤처",
             "role": "DAMAGE",
-            "winRate": 52.2,
-            "pickRate": 4
+            "winRate": 52,
+            "pickRate": 4.1
         },
         {
             "id": "brigitte",
             "name": "브리기테",
             "role": "SUPPORT",
-            "winRate": 46.3,
-            "pickRate": 3.1
+            "winRate": 46.4,
+            "pickRate": 3.2
         },
         {
             "id": "sojourn",
             "name": "소전",
             "role": "DAMAGE",
-            "winRate": 46.3,
-            "pickRate": 13.3
+            "winRate": 46.2,
+            "pickRate": 13.5
         },
         {
             "id": "soldier-76",
             "name": "솔저: 76",
             "role": "DAMAGE",
-            "winRate": 48.7,
-            "pickRate": 17.8
+            "winRate": 48.6,
+            "pickRate": 18
         },
         {
             "id": "sombra",
             "name": "솜브라",
             "role": "DAMAGE",
             "winRate": 50,
-            "pickRate": 3.7
+            "pickRate": 3.8
         },
         {
             "id": "sigma",
             "name": "시그마",
             "role": "TANK",
             "winRate": 52.8,
-            "pickRate": 12.9
+            "pickRate": 13
         },
         {
             "id": "symmetra",
@@ -186,141 +186,141 @@
             "id": "ana",
             "name": "아나",
             "role": "SUPPORT",
-            "winRate": 49.4,
-            "pickRate": 45.3
+            "winRate": 49.5,
+            "pickRate": 45.7
         },
         {
             "id": "anran",
             "name": "안란",
             "role": "DAMAGE",
-            "winRate": 50.3,
-            "pickRate": 16.7
+            "winRate": 50.4,
+            "pickRate": 16.2
         },
         {
             "id": "ashe",
             "name": "애쉬",
             "role": "DAMAGE",
             "winRate": 51.5,
-            "pickRate": 13.1
+            "pickRate": 13.2
         },
         {
             "id": "echo",
             "name": "에코",
             "role": "DAMAGE",
             "winRate": 52,
-            "pickRate": 4.8
+            "pickRate": 4.9
         },
         {
             "id": "emre",
             "name": "엠레",
             "role": "DAMAGE",
             "winRate": 48.2,
-            "pickRate": 21
+            "pickRate": 19.9
         },
         {
             "id": "orisa",
             "name": "오리사",
             "role": "TANK",
-            "winRate": 44.8,
-            "pickRate": 9.1
+            "winRate": 44.9,
+            "pickRate": 9.2
         },
         {
             "id": "wuyang",
             "name": "우양",
             "role": "SUPPORT",
             "winRate": 51.9,
-            "pickRate": 11.9
+            "pickRate": 12
         },
         {
             "id": "widowmaker",
             "name": "위도우메이커",
             "role": "DAMAGE",
-            "winRate": 49.4,
-            "pickRate": 4.1
+            "winRate": 49.5,
+            "pickRate": 4.2
         },
         {
             "id": "winston",
             "name": "윈스턴",
             "role": "TANK",
-            "winRate": 52,
-            "pickRate": 9.1
+            "winRate": 52.1,
+            "pickRate": 9.3
         },
         {
             "id": "illari",
             "name": "일리아리",
             "role": "SUPPORT",
             "winRate": 54.4,
-            "pickRate": 10.8
+            "pickRate": 11
         },
         {
             "id": "zarya",
             "name": "자리야",
             "role": "TANK",
             "winRate": 48,
-            "pickRate": 8.4
+            "pickRate": 8.5
         },
         {
             "id": "junker-queen",
             "name": "정커퀸",
             "role": "TANK",
-            "winRate": 51.5,
-            "pickRate": 2.9
+            "winRate": 51.3,
+            "pickRate": 2.8
         },
         {
             "id": "junkrat",
             "name": "정크랫",
             "role": "DAMAGE",
-            "winRate": 48.3,
-            "pickRate": 6.3
+            "winRate": 48.2,
+            "pickRate": 6.4
         },
         {
             "id": "jetpack-cat",
             "name": "제트팩 캣",
             "role": "SUPPORT",
-            "winRate": 51.5,
-            "pickRate": 8.2
+            "winRate": 51.7,
+            "pickRate": 7.8
         },
         {
             "id": "zenyatta",
             "name": "젠야타",
             "role": "SUPPORT",
             "winRate": 52.2,
-            "pickRate": 9.5
+            "pickRate": 9.6
         },
         {
             "id": "juno",
             "name": "주노",
             "role": "SUPPORT",
             "winRate": 50,
-            "pickRate": 10.5
+            "pickRate": 10.6
         },
         {
             "id": "cassidy",
             "name": "캐서디",
             "role": "DAMAGE",
-            "winRate": 47.4,
-            "pickRate": 20.8
+            "winRate": 47.3,
+            "pickRate": 21
         },
         {
             "id": "kiriko",
             "name": "키리코",
             "role": "SUPPORT",
             "winRate": 47,
-            "pickRate": 29.5
+            "pickRate": 29.9
         },
         {
             "id": "torbjorn",
             "name": "토르비욘",
             "role": "DAMAGE",
-            "winRate": 45.5,
-            "pickRate": 2.8
+            "winRate": 45.6,
+            "pickRate": 2.7
         },
         {
             "id": "tracer",
             "name": "트레이서",
             "role": "DAMAGE",
             "winRate": 50.4,
-            "pickRate": 7.1
+            "pickRate": 7.2
         },
         {
             "id": "pharah",
@@ -333,15 +333,15 @@
             "id": "freja",
             "name": "프레야",
             "role": "DAMAGE",
-            "winRate": 47.1,
+            "winRate": 47.2,
             "pickRate": 4.2
         },
         {
             "id": "hanzo",
             "name": "한조",
             "role": "DAMAGE",
-            "winRate": 49.6,
-            "pickRate": 7
+            "winRate": 49.7,
+            "pickRate": 7.1
         },
         {
             "id": "hazard",
@@ -356,49 +356,49 @@
             "id": "dva",
             "name": "D.Va",
             "role": "TANK",
-            "winRate": 47.6,
-            "pickRate": 9.5
+            "winRate": 47.9,
+            "pickRate": 9.7
         },
         {
             "id": "genji",
             "name": "겐지",
             "role": "DAMAGE",
-            "winRate": 51.2,
-            "pickRate": 9.1
+            "winRate": 51.1,
+            "pickRate": 9.2
         },
         {
             "id": "domina",
             "name": "도미나",
             "role": "TANK",
-            "winRate": 55.5,
-            "pickRate": 17
+            "winRate": 55,
+            "pickRate": 16.1
         },
         {
             "id": "doomfist",
             "name": "둠피스트",
             "role": "TANK",
-            "winRate": 55.1,
-            "pickRate": 3.6
+            "winRate": 54.4,
+            "pickRate": 3.7
         },
         {
             "id": "ramattra",
             "name": "라마트라",
             "role": "TANK",
-            "winRate": 47.7,
+            "winRate": 47.6,
             "pickRate": 8.4
         },
         {
             "id": "lifeweaver",
             "name": "라이프위버",
             "role": "SUPPORT",
-            "winRate": 43.5,
+            "winRate": 43.2,
             "pickRate": 3.6
         },
         {
             "id": "reinhardt",
             "name": "라인하르트",
             "role": "TANK",
-            "winRate": 50.2,
+            "winRate": 50.3,
             "pickRate": 8.6
         },
         {
@@ -406,41 +406,41 @@
             "name": "레킹볼",
             "role": "TANK",
             "winRate": 51.6,
-            "pickRate": 2.4
+            "pickRate": 2.5
         },
         {
             "id": "roadhog",
             "name": "로드호그",
             "role": "TANK",
-            "winRate": 44.2,
+            "winRate": 43.9,
             "pickRate": 4.1
         },
         {
             "id": "lucio",
             "name": "루시우",
             "role": "SUPPORT",
-            "winRate": 46.9,
-            "pickRate": 8.4
+            "winRate": 47,
+            "pickRate": 8.5
         },
         {
             "id": "reaper",
             "name": "리퍼",
             "role": "DAMAGE",
-            "winRate": 53.5,
-            "pickRate": 11.6
+            "winRate": 53.6,
+            "pickRate": 12
         },
         {
             "id": "mauga",
             "name": "마우가",
             "role": "TANK",
-            "winRate": 46.9,
+            "winRate": 47.1,
             "pickRate": 4.4
         },
         {
             "id": "mercy",
             "name": "메르시",
             "role": "SUPPORT",
-            "winRate": 44.4,
+            "winRate": 44.1,
             "pickRate": 12.8
         },
         {
@@ -448,34 +448,34 @@
             "name": "메이",
             "role": "DAMAGE",
             "winRate": 51.1,
-            "pickRate": 5.5
+            "pickRate": 5.6
         },
         {
             "id": "moira",
             "name": "모이라",
             "role": "SUPPORT",
-            "winRate": 48.9,
-            "pickRate": 21.5
+            "winRate": 48.7,
+            "pickRate": 21.6
         },
         {
             "id": "mizuki",
             "name": "미즈키",
             "role": "SUPPORT",
-            "winRate": 54.4,
-            "pickRate": 30.3
+            "winRate": 54.5,
+            "pickRate": 29.2
         },
         {
             "id": "bastion",
             "name": "바스티온",
             "role": "DAMAGE",
-            "winRate": 48.8,
+            "winRate": 48.7,
             "pickRate": 18.8
         },
         {
             "id": "baptiste",
             "name": "바티스트",
             "role": "SUPPORT",
-            "winRate": 45.7,
+            "winRate": 45.8,
             "pickRate": 6.4
         },
         {
@@ -489,29 +489,29 @@
             "id": "venture",
             "name": "벤처",
             "role": "DAMAGE",
-            "winRate": 53.3,
+            "winRate": 53.2,
             "pickRate": 3.4
         },
         {
             "id": "brigitte",
             "name": "브리기테",
             "role": "SUPPORT",
-            "winRate": 47.8,
+            "winRate": 47.9,
             "pickRate": 2
         },
         {
             "id": "sojourn",
             "name": "소전",
             "role": "DAMAGE",
-            "winRate": 44.3,
+            "winRate": 44.4,
             "pickRate": 15.9
         },
         {
             "id": "soldier-76",
             "name": "솔저: 76",
             "role": "DAMAGE",
-            "winRate": 48.6,
-            "pickRate": 21.6
+            "winRate": 48.5,
+            "pickRate": 21.8
         },
         {
             "id": "sombra",
@@ -524,14 +524,14 @@
             "id": "sigma",
             "name": "시그마",
             "role": "TANK",
-            "winRate": 52.9,
-            "pickRate": 14.9
+            "winRate": 53.1,
+            "pickRate": 15.1
         },
         {
             "id": "symmetra",
             "name": "시메트라",
             "role": "DAMAGE",
-            "winRate": 55.5,
+            "winRate": 55.4,
             "pickRate": 3
         },
         {
@@ -539,48 +539,48 @@
             "name": "아나",
             "role": "SUPPORT",
             "winRate": 49.1,
-            "pickRate": 24.8
+            "pickRate": 25.1
         },
         {
             "id": "anran",
             "name": "안란",
             "role": "DAMAGE",
             "winRate": 51.6,
-            "pickRate": 16.6
+            "pickRate": 16.1
         },
         {
             "id": "ashe",
             "name": "애쉬",
             "role": "DAMAGE",
-            "winRate": 50.2,
-            "pickRate": 11.7
+            "winRate": 50.4,
+            "pickRate": 11.8
         },
         {
             "id": "echo",
             "name": "에코",
             "role": "DAMAGE",
-            "winRate": 48.6,
-            "pickRate": 3.8
+            "winRate": 48.5,
+            "pickRate": 4
         },
         {
             "id": "emre",
             "name": "엠레",
             "role": "DAMAGE",
-            "winRate": 48.6,
-            "pickRate": 19.7
+            "winRate": 48.5,
+            "pickRate": 18.6
         },
         {
             "id": "orisa",
             "name": "오리사",
             "role": "TANK",
             "winRate": 44.6,
-            "pickRate": 12.6
+            "pickRate": 12.7
         },
         {
             "id": "wuyang",
             "name": "우양",
             "role": "SUPPORT",
-            "winRate": 50.9,
+            "winRate": 51.3,
             "pickRate": 12.4
         },
         {
@@ -588,97 +588,97 @@
             "name": "위도우메이커",
             "role": "DAMAGE",
             "winRate": 46.2,
-            "pickRate": 3.7
+            "pickRate": 3.8
         },
         {
             "id": "winston",
             "name": "윈스턴",
             "role": "TANK",
-            "winRate": 50.7,
-            "pickRate": 5.2
+            "winRate": 51.1,
+            "pickRate": 5.4
         },
         {
             "id": "illari",
             "name": "일리아리",
             "role": "SUPPORT",
-            "winRate": 53.6,
-            "pickRate": 10.1
+            "winRate": 53.5,
+            "pickRate": 10.3
         },
         {
             "id": "zarya",
             "name": "자리야",
             "role": "TANK",
-            "winRate": 49.8,
+            "winRate": 50.1,
             "pickRate": 5.5
         },
         {
             "id": "junker-queen",
             "name": "정커퀸",
             "role": "TANK",
-            "winRate": 48.2,
+            "winRate": 48.6,
             "pickRate": 2.3
         },
         {
             "id": "junkrat",
             "name": "정크랫",
             "role": "DAMAGE",
-            "winRate": 49,
-            "pickRate": 11.1
+            "winRate": 48.9,
+            "pickRate": 11.2
         },
         {
             "id": "jetpack-cat",
             "name": "제트팩 캣",
             "role": "SUPPORT",
             "winRate": 52.6,
-            "pickRate": 8.9
+            "pickRate": 8.4
         },
         {
             "id": "zenyatta",
             "name": "젠야타",
             "role": "SUPPORT",
-            "winRate": 53.2,
-            "pickRate": 9.8
+            "winRate": 53.6,
+            "pickRate": 9.9
         },
         {
             "id": "juno",
             "name": "주노",
             "role": "SUPPORT",
-            "winRate": 49.4,
-            "pickRate": 20.7
+            "winRate": 49.6,
+            "pickRate": 20.9
         },
         {
             "id": "cassidy",
             "name": "캐서디",
             "role": "DAMAGE",
-            "winRate": 48.9,
-            "pickRate": 13.1
+            "winRate": 49,
+            "pickRate": 13.2
         },
         {
             "id": "kiriko",
             "name": "키리코",
             "role": "SUPPORT",
             "winRate": 47.5,
-            "pickRate": 28.5
+            "pickRate": 29
         },
         {
             "id": "torbjorn",
             "name": "토르비욘",
             "role": "DAMAGE",
-            "winRate": 48.2,
-            "pickRate": 3.6
+            "winRate": 48.3,
+            "pickRate": 3.5
         },
         {
             "id": "tracer",
             "name": "트레이서",
             "role": "DAMAGE",
-            "winRate": 48.6,
+            "winRate": 49.1,
             "pickRate": 3.9
         },
         {
             "id": "pharah",
             "name": "파라",
             "role": "DAMAGE",
-            "winRate": 51.9,
+            "winRate": 51.7,
             "pickRate": 6.8
         },
         {
@@ -686,20 +686,20 @@
             "name": "프레야",
             "role": "DAMAGE",
             "winRate": 46.6,
-            "pickRate": 4
+            "pickRate": 4.1
         },
         {
             "id": "hanzo",
             "name": "한조",
             "role": "DAMAGE",
             "winRate": 50.3,
-            "pickRate": 5.9
+            "pickRate": 6
         },
         {
             "id": "hazard",
             "name": "해저드",
             "role": "TANK",
-            "winRate": 41.7,
+            "winRate": 42.5,
             "pickRate": 1.6
         }
     ],
@@ -708,29 +708,29 @@
             "id": "dva",
             "name": "D.Va",
             "role": "TANK",
-            "winRate": 47.7,
-            "pickRate": 7.9
+            "winRate": 47.9,
+            "pickRate": 8.1
         },
         {
             "id": "genji",
             "name": "겐지",
             "role": "DAMAGE",
             "winRate": 52.3,
-            "pickRate": 10.8
+            "pickRate": 10.9
         },
         {
             "id": "domina",
             "name": "도미나",
             "role": "TANK",
-            "winRate": 54.5,
-            "pickRate": 18.3
+            "winRate": 54.4,
+            "pickRate": 17.3
         },
         {
             "id": "doomfist",
             "name": "둠피스트",
             "role": "TANK",
-            "winRate": 53,
-            "pickRate": 4.5
+            "winRate": 53.1,
+            "pickRate": 4.6
         },
         {
             "id": "ramattra",
@@ -743,7 +743,7 @@
             "id": "lifeweaver",
             "name": "라이프위버",
             "role": "SUPPORT",
-            "winRate": 45.1,
+            "winRate": 45.2,
             "pickRate": 4.2
         },
         {
@@ -751,83 +751,83 @@
             "name": "라인하르트",
             "role": "TANK",
             "winRate": 50.1,
-            "pickRate": 8.6
+            "pickRate": 8.7
         },
         {
             "id": "wrecking-ball",
             "name": "레킹볼",
             "role": "TANK",
-            "winRate": 52.9,
+            "winRate": 52.7,
             "pickRate": 2.6
         },
         {
             "id": "roadhog",
             "name": "로드호그",
             "role": "TANK",
-            "winRate": 41.2,
-            "pickRate": 3.9
+            "winRate": 41.5,
+            "pickRate": 4
         },
         {
             "id": "lucio",
             "name": "루시우",
             "role": "SUPPORT",
-            "winRate": 47,
-            "pickRate": 6.7
+            "winRate": 47.1,
+            "pickRate": 6.8
         },
         {
             "id": "reaper",
             "name": "리퍼",
             "role": "DAMAGE",
-            "winRate": 52,
-            "pickRate": 12.2
+            "winRate": 51.9,
+            "pickRate": 12.4
         },
         {
             "id": "mauga",
             "name": "마우가",
             "role": "TANK",
-            "winRate": 45.6,
+            "winRate": 45.7,
             "pickRate": 3.7
         },
         {
             "id": "mercy",
             "name": "메르시",
             "role": "SUPPORT",
-            "winRate": 45.6,
+            "winRate": 45.3,
             "pickRate": 11.9
         },
         {
             "id": "mei",
             "name": "메이",
             "role": "DAMAGE",
-            "winRate": 51,
-            "pickRate": 6
+            "winRate": 50.8,
+            "pickRate": 6.1
         },
         {
             "id": "moira",
             "name": "모이라",
             "role": "SUPPORT",
             "winRate": 47.7,
-            "pickRate": 19
+            "pickRate": 19.1
         },
         {
             "id": "mizuki",
             "name": "미즈키",
             "role": "SUPPORT",
             "winRate": 54.5,
-            "pickRate": 31.8
+            "pickRate": 30.6
         },
         {
             "id": "bastion",
             "name": "바스티온",
             "role": "DAMAGE",
-            "winRate": 47.9,
+            "winRate": 47.7,
             "pickRate": 12.9
         },
         {
             "id": "baptiste",
             "name": "바티스트",
             "role": "SUPPORT",
-            "winRate": 45.5,
+            "winRate": 45.4,
             "pickRate": 6.8
         },
         {
@@ -841,35 +841,35 @@
             "id": "venture",
             "name": "벤처",
             "role": "DAMAGE",
-            "winRate": 51.8,
-            "pickRate": 3.7
+            "winRate": 52,
+            "pickRate": 3.8
         },
         {
             "id": "brigitte",
             "name": "브리기테",
             "role": "SUPPORT",
-            "winRate": 46.9,
-            "pickRate": 2.4
+            "winRate": 47.1,
+            "pickRate": 2.5
         },
         {
             "id": "sojourn",
             "name": "소전",
             "role": "DAMAGE",
-            "winRate": 45.5,
-            "pickRate": 13.4
+            "winRate": 45.4,
+            "pickRate": 13.5
         },
         {
             "id": "soldier-76",
             "name": "솔저: 76",
             "role": "DAMAGE",
-            "winRate": 48.4,
-            "pickRate": 21
+            "winRate": 48.3,
+            "pickRate": 21.3
         },
         {
             "id": "sombra",
             "name": "솜브라",
             "role": "DAMAGE",
-            "winRate": 51.9,
+            "winRate": 52,
             "pickRate": 3.1
         },
         {
@@ -877,69 +877,69 @@
             "name": "시그마",
             "role": "TANK",
             "winRate": 52.6,
-            "pickRate": 13.5
+            "pickRate": 13.6
         },
         {
             "id": "symmetra",
             "name": "시메트라",
             "role": "DAMAGE",
-            "winRate": 55,
+            "winRate": 54.9,
             "pickRate": 3.7
         },
         {
             "id": "ana",
             "name": "아나",
             "role": "SUPPORT",
-            "winRate": 48.7,
-            "pickRate": 35.6
+            "winRate": 48.8,
+            "pickRate": 35.9
         },
         {
             "id": "anran",
             "name": "안란",
             "role": "DAMAGE",
-            "winRate": 50.2,
-            "pickRate": 17.9
+            "winRate": 50.3,
+            "pickRate": 17.4
         },
         {
             "id": "ashe",
             "name": "애쉬",
             "role": "DAMAGE",
             "winRate": 51.2,
-            "pickRate": 12
+            "pickRate": 12.1
         },
         {
             "id": "echo",
             "name": "에코",
             "role": "DAMAGE",
-            "winRate": 50.3,
-            "pickRate": 3.7
+            "winRate": 50.5,
+            "pickRate": 3.8
         },
         {
             "id": "emre",
             "name": "엠레",
             "role": "DAMAGE",
-            "winRate": 48.1,
-            "pickRate": 21.6
+            "winRate": 48.2,
+            "pickRate": 20.4
         },
         {
             "id": "orisa",
             "name": "오리사",
             "role": "TANK",
             "winRate": 45.1,
-            "pickRate": 11.2
+            "pickRate": 11.4
         },
         {
             "id": "wuyang",
             "name": "우양",
             "role": "SUPPORT",
             "winRate": 51.8,
-            "pickRate": 10.4
+            "pickRate": 10.5
         },
         {
             "id": "widowmaker",
             "name": "위도우메이커",
             "role": "DAMAGE",
-            "winRate": 48.9,
+            "winRate": 49.2,
             "pickRate": 3.6
         },
         {
@@ -947,111 +947,111 @@
             "name": "윈스턴",
             "role": "TANK",
             "winRate": 51.6,
-            "pickRate": 6.8
+            "pickRate": 6.9
         },
         {
             "id": "illari",
             "name": "일리아리",
             "role": "SUPPORT",
             "winRate": 53.8,
-            "pickRate": 9.8
+            "pickRate": 10
         },
         {
             "id": "zarya",
             "name": "자리야",
             "role": "TANK",
             "winRate": 48.8,
-            "pickRate": 7.6
+            "pickRate": 7.7
         },
         {
             "id": "junker-queen",
             "name": "정커퀸",
             "role": "TANK",
-            "winRate": 51.4,
+            "winRate": 51.5,
             "pickRate": 2.6
         },
         {
             "id": "junkrat",
             "name": "정크랫",
             "role": "DAMAGE",
-            "winRate": 48.2,
-            "pickRate": 8.7
+            "winRate": 48.1,
+            "pickRate": 8.8
         },
         {
             "id": "jetpack-cat",
             "name": "제트팩 캣",
             "role": "SUPPORT",
-            "winRate": 52.6,
-            "pickRate": 9.1
+            "winRate": 52.5,
+            "pickRate": 8.6
         },
         {
             "id": "zenyatta",
             "name": "젠야타",
             "role": "SUPPORT",
-            "winRate": 52.2,
-            "pickRate": 8.8
+            "winRate": 52.3,
+            "pickRate": 9
         },
         {
             "id": "juno",
             "name": "주노",
             "role": "SUPPORT",
             "winRate": 49.6,
-            "pickRate": 14.5
+            "pickRate": 14.6
         },
         {
             "id": "cassidy",
             "name": "캐서디",
             "role": "DAMAGE",
             "winRate": 48.5,
-            "pickRate": 16.4
+            "pickRate": 16.6
         },
         {
             "id": "kiriko",
             "name": "키리코",
             "role": "SUPPORT",
-            "winRate": 47.3,
-            "pickRate": 29
+            "winRate": 47.4,
+            "pickRate": 29.3
         },
         {
             "id": "torbjorn",
             "name": "토르비욘",
             "role": "DAMAGE",
-            "winRate": 46.8,
+            "winRate": 46.9,
             "pickRate": 3.2
         },
         {
             "id": "tracer",
             "name": "트레이서",
             "role": "DAMAGE",
-            "winRate": 49.2,
-            "pickRate": 4.4
+            "winRate": 49,
+            "pickRate": 4.5
         },
         {
             "id": "pharah",
             "name": "파라",
             "role": "DAMAGE",
-            "winRate": 51.7,
+            "winRate": 51.6,
             "pickRate": 5.9
         },
         {
             "id": "freja",
             "name": "프레야",
             "role": "DAMAGE",
-            "winRate": 46.3,
+            "winRate": 46.6,
             "pickRate": 4
         },
         {
             "id": "hanzo",
             "name": "한조",
             "role": "DAMAGE",
-            "winRate": 49.9,
+            "winRate": 50,
             "pickRate": 6.3
         },
         {
             "id": "hazard",
             "name": "해저드",
             "role": "TANK",
-            "winRate": 45.8,
+            "winRate": 46.2,
             "pickRate": 1.6
         }
     ],
@@ -1060,78 +1060,78 @@
             "id": "dva",
             "name": "D.Va",
             "role": "TANK",
-            "winRate": 48.4,
-            "pickRate": 7.3
+            "winRate": 48.6,
+            "pickRate": 7.4
         },
         {
             "id": "genji",
             "name": "겐지",
             "role": "DAMAGE",
             "winRate": 52,
-            "pickRate": 13.3
+            "pickRate": 13.5
         },
         {
             "id": "domina",
             "name": "도미나",
             "role": "TANK",
-            "winRate": 55,
-            "pickRate": 18.3
+            "winRate": 54.9,
+            "pickRate": 17.2
         },
         {
             "id": "doomfist",
             "name": "둠피스트",
             "role": "TANK",
             "winRate": 52.7,
-            "pickRate": 5.9
+            "pickRate": 6
         },
         {
             "id": "ramattra",
             "name": "라마트라",
             "role": "TANK",
-            "winRate": 46.2,
+            "winRate": 46.1,
             "pickRate": 5.9
         },
         {
             "id": "lifeweaver",
             "name": "라이프위버",
             "role": "SUPPORT",
-            "winRate": 44.3,
-            "pickRate": 4.3
+            "winRate": 44.4,
+            "pickRate": 4.4
         },
         {
             "id": "reinhardt",
             "name": "라인하르트",
             "role": "TANK",
             "winRate": 49.5,
-            "pickRate": 8.3
+            "pickRate": 8.4
         },
         {
             "id": "wrecking-ball",
             "name": "레킹볼",
             "role": "TANK",
-            "winRate": 51.2,
-            "pickRate": 3.1
+            "winRate": 51.3,
+            "pickRate": 3.2
         },
         {
             "id": "roadhog",
             "name": "로드호그",
             "role": "TANK",
-            "winRate": 40.8,
-            "pickRate": 4.2
+            "winRate": 40.9,
+            "pickRate": 4.3
         },
         {
             "id": "lucio",
             "name": "루시우",
             "role": "SUPPORT",
-            "winRate": 47,
-            "pickRate": 5
+            "winRate": 47.2,
+            "pickRate": 5.1
         },
         {
             "id": "reaper",
             "name": "리퍼",
             "role": "DAMAGE",
             "winRate": 50.8,
-            "pickRate": 10.9
+            "pickRate": 11.1
         },
         {
             "id": "mauga",
@@ -1145,28 +1145,28 @@
             "name": "메르시",
             "role": "SUPPORT",
             "winRate": 47.6,
-            "pickRate": 9.5
+            "pickRate": 9.6
         },
         {
             "id": "mei",
             "name": "메이",
             "role": "DAMAGE",
             "winRate": 50.1,
-            "pickRate": 6
+            "pickRate": 6.1
         },
         {
             "id": "moira",
             "name": "모이라",
             "role": "SUPPORT",
             "winRate": 47.5,
-            "pickRate": 14.6
+            "pickRate": 14.9
         },
         {
             "id": "mizuki",
             "name": "미즈키",
             "role": "SUPPORT",
-            "winRate": 53.6,
-            "pickRate": 31.5
+            "winRate": 53.5,
+            "pickRate": 30.3
         },
         {
             "id": "bastion",
@@ -1179,49 +1179,49 @@
             "id": "baptiste",
             "name": "바티스트",
             "role": "SUPPORT",
-            "winRate": 45.1,
+            "winRate": 45,
             "pickRate": 7.7
         },
         {
             "id": "vendetta",
             "name": "벤데타",
             "role": "DAMAGE",
-            "winRate": 53.9,
+            "winRate": 54.1,
             "pickRate": 5.2
         },
         {
             "id": "venture",
             "name": "벤처",
             "role": "DAMAGE",
-            "winRate": 52.4,
+            "winRate": 52.2,
             "pickRate": 4
         },
         {
             "id": "brigitte",
             "name": "브리기테",
             "role": "SUPPORT",
-            "winRate": 46.2,
-            "pickRate": 2.8
+            "winRate": 46.3,
+            "pickRate": 2.9
         },
         {
             "id": "sojourn",
             "name": "소전",
             "role": "DAMAGE",
             "winRate": 45.7,
-            "pickRate": 12.2
+            "pickRate": 12.3
         },
         {
             "id": "soldier-76",
             "name": "솔저: 76",
             "role": "DAMAGE",
             "winRate": 48.3,
-            "pickRate": 18.8
+            "pickRate": 19.1
         },
         {
             "id": "sombra",
             "name": "솜브라",
             "role": "DAMAGE",
-            "winRate": 50.4,
+            "winRate": 50.2,
             "pickRate": 3.5
         },
         {
@@ -1229,181 +1229,181 @@
             "name": "시그마",
             "role": "TANK",
             "winRate": 52.8,
-            "pickRate": 12.7
+            "pickRate": 12.8
         },
         {
             "id": "symmetra",
             "name": "시메트라",
             "role": "DAMAGE",
-            "winRate": 54,
+            "winRate": 54.2,
             "pickRate": 4.1
         },
         {
             "id": "ana",
             "name": "아나",
             "role": "SUPPORT",
-            "winRate": 49.3,
-            "pickRate": 46.3
+            "winRate": 49.4,
+            "pickRate": 46.7
         },
         {
             "id": "anran",
             "name": "안란",
             "role": "DAMAGE",
-            "winRate": 50.8,
-            "pickRate": 17.7
+            "winRate": 50.9,
+            "pickRate": 17.1
         },
         {
             "id": "ashe",
             "name": "애쉬",
             "role": "DAMAGE",
             "winRate": 51.7,
-            "pickRate": 13.5
+            "pickRate": 13.6
         },
         {
             "id": "echo",
             "name": "에코",
             "role": "DAMAGE",
-            "winRate": 52.1,
-            "pickRate": 4.3
+            "winRate": 52,
+            "pickRate": 4.4
         },
         {
             "id": "emre",
             "name": "엠레",
             "role": "DAMAGE",
             "winRate": 48.3,
-            "pickRate": 21.8
+            "pickRate": 20.7
         },
         {
             "id": "orisa",
             "name": "오리사",
             "role": "TANK",
-            "winRate": 44.5,
-            "pickRate": 9.3
+            "winRate": 44.6,
+            "pickRate": 9.5
         },
         {
             "id": "wuyang",
             "name": "우양",
             "role": "SUPPORT",
-            "winRate": 51.7,
-            "pickRate": 10.6
+            "winRate": 51.8,
+            "pickRate": 10.7
         },
         {
             "id": "widowmaker",
             "name": "위도우메이커",
             "role": "DAMAGE",
-            "winRate": 50,
-            "pickRate": 4
+            "winRate": 50.1,
+            "pickRate": 4.1
         },
         {
             "id": "winston",
             "name": "윈스턴",
             "role": "TANK",
-            "winRate": 51.6,
-            "pickRate": 8.5
+            "winRate": 51.7,
+            "pickRate": 8.7
         },
         {
             "id": "illari",
             "name": "일리아리",
             "role": "SUPPORT",
-            "winRate": 53.8,
-            "pickRate": 9.9
+            "winRate": 53.9,
+            "pickRate": 10.1
         },
         {
             "id": "zarya",
             "name": "자리야",
             "role": "TANK",
-            "winRate": 47.5,
-            "pickRate": 8.9
+            "winRate": 47.6,
+            "pickRate": 9
         },
         {
             "id": "junker-queen",
             "name": "정커퀸",
             "role": "TANK",
-            "winRate": 51.7,
-            "pickRate": 3
+            "winRate": 51.5,
+            "pickRate": 2.9
         },
         {
             "id": "junkrat",
             "name": "정크랫",
             "role": "DAMAGE",
-            "winRate": 48.2,
-            "pickRate": 6.3
+            "winRate": 48.1,
+            "pickRate": 6.4
         },
         {
             "id": "jetpack-cat",
             "name": "제트팩 캣",
             "role": "SUPPORT",
-            "winRate": 51.3,
-            "pickRate": 8.7
+            "winRate": 51.6,
+            "pickRate": 8.3
         },
         {
             "id": "zenyatta",
             "name": "젠야타",
             "role": "SUPPORT",
             "winRate": 52.3,
-            "pickRate": 9.2
+            "pickRate": 9.4
         },
         {
             "id": "juno",
             "name": "주노",
             "role": "SUPPORT",
-            "winRate": 50.3,
+            "winRate": 50.4,
             "pickRate": 10.4
         },
         {
             "id": "cassidy",
             "name": "캐서디",
             "role": "DAMAGE",
-            "winRate": 47.3,
-            "pickRate": 20.4
+            "winRate": 47.2,
+            "pickRate": 20.6
         },
         {
             "id": "kiriko",
             "name": "키리코",
             "role": "SUPPORT",
-            "winRate": 46.8,
-            "pickRate": 29.3
+            "winRate": 46.7,
+            "pickRate": 29.7
         },
         {
             "id": "torbjorn",
             "name": "토르비욘",
             "role": "DAMAGE",
-            "winRate": 45.9,
+            "winRate": 46,
             "pickRate": 2.8
         },
         {
             "id": "tracer",
             "name": "트레이서",
             "role": "DAMAGE",
-            "winRate": 49.6,
-            "pickRate": 5.6
+            "winRate": 49.7,
+            "pickRate": 5.7
         },
         {
             "id": "pharah",
             "name": "파라",
             "role": "DAMAGE",
-            "winRate": 52.2,
+            "winRate": 52.3,
             "pickRate": 5.4
         },
         {
             "id": "freja",
             "name": "프레야",
             "role": "DAMAGE",
-            "winRate": 47,
+            "winRate": 47.1,
             "pickRate": 4.1
         },
         {
             "id": "hanzo",
             "name": "한조",
             "role": "DAMAGE",
-            "winRate": 49.7,
+            "winRate": 49.8,
             "pickRate": 7
         },
         {
             "id": "hazard",
             "name": "해저드",
             "role": "TANK",
-            "winRate": 47.6,
+            "winRate": 47.5,
             "pickRate": 1.7
         }
     ],
@@ -1413,34 +1413,34 @@
             "name": "D.Va",
             "role": "TANK",
             "winRate": 49.5,
-            "pickRate": 7.3
+            "pickRate": 7.5
         },
         {
             "id": "genji",
             "name": "겐지",
             "role": "DAMAGE",
-            "winRate": 51.9,
-            "pickRate": 15.6
+            "winRate": 51.8,
+            "pickRate": 15.8
         },
         {
             "id": "domina",
             "name": "도미나",
             "role": "TANK",
             "winRate": 54.7,
-            "pickRate": 17.2
+            "pickRate": 16.2
         },
         {
             "id": "doomfist",
             "name": "둠피스트",
             "role": "TANK",
-            "winRate": 51.8,
+            "winRate": 52,
             "pickRate": 8.1
         },
         {
             "id": "ramattra",
             "name": "라마트라",
             "role": "TANK",
-            "winRate": 45.4,
+            "winRate": 45.5,
             "pickRate": 4.5
         },
         {
@@ -1454,7 +1454,7 @@
             "id": "reinhardt",
             "name": "라인하르트",
             "role": "TANK",
-            "winRate": 48.7,
+            "winRate": 48.4,
             "pickRate": 7.6
         },
         {
@@ -1468,28 +1468,28 @@
             "id": "roadhog",
             "name": "로드호그",
             "role": "TANK",
-            "winRate": 39.3,
-            "pickRate": 4.1
+            "winRate": 39.4,
+            "pickRate": 4.2
         },
         {
             "id": "lucio",
             "name": "루시우",
             "role": "SUPPORT",
-            "winRate": 47.3,
+            "winRate": 47.4,
             "pickRate": 4
         },
         {
             "id": "reaper",
             "name": "리퍼",
             "role": "DAMAGE",
-            "winRate": 51.2,
-            "pickRate": 9
+            "winRate": 51.1,
+            "pickRate": 9.2
         },
         {
             "id": "mauga",
             "name": "마우가",
             "role": "TANK",
-            "winRate": 45.8,
+            "winRate": 46,
             "pickRate": 2.4
         },
         {
@@ -1497,42 +1497,42 @@
             "name": "메르시",
             "role": "SUPPORT",
             "winRate": 47.8,
-            "pickRate": 7.4
+            "pickRate": 7.5
         },
         {
             "id": "mei",
             "name": "메이",
             "role": "DAMAGE",
             "winRate": 49.8,
-            "pickRate": 5.4
+            "pickRate": 5.5
         },
         {
             "id": "moira",
             "name": "모이라",
             "role": "SUPPORT",
-            "winRate": 47.7,
-            "pickRate": 10.1
+            "winRate": 47.5,
+            "pickRate": 10.2
         },
         {
             "id": "mizuki",
             "name": "미즈키",
             "role": "SUPPORT",
             "winRate": 52.4,
-            "pickRate": 29.8
+            "pickRate": 28.5
         },
         {
             "id": "bastion",
             "name": "바스티온",
             "role": "DAMAGE",
-            "winRate": 47.4,
+            "winRate": 47.3,
             "pickRate": 6.5
         },
         {
             "id": "baptiste",
             "name": "바티스트",
             "role": "SUPPORT",
-            "winRate": 45.3,
-            "pickRate": 8.5
+            "winRate": 45.2,
+            "pickRate": 8.4
         },
         {
             "id": "vendetta",
@@ -1545,29 +1545,29 @@
             "id": "venture",
             "name": "벤처",
             "role": "DAMAGE",
-            "winRate": 52.1,
+            "winRate": 51.7,
             "pickRate": 4.3
         },
         {
             "id": "brigitte",
             "name": "브리기테",
             "role": "SUPPORT",
-            "winRate": 45.9,
+            "winRate": 45.8,
             "pickRate": 3.7
         },
         {
             "id": "sojourn",
             "name": "소전",
             "role": "DAMAGE",
-            "winRate": 47.2,
-            "pickRate": 13
+            "winRate": 47.1,
+            "pickRate": 13.2
         },
         {
             "id": "soldier-76",
             "name": "솔저: 76",
             "role": "DAMAGE",
-            "winRate": 49.3,
-            "pickRate": 15
+            "winRate": 49.2,
+            "pickRate": 15.3
         },
         {
             "id": "sombra",
@@ -1581,7 +1581,7 @@
             "name": "시그마",
             "role": "TANK",
             "winRate": 52.9,
-            "pickRate": 12.3
+            "pickRate": 12.4
         },
         {
             "id": "symmetra",
@@ -1594,84 +1594,84 @@
             "id": "ana",
             "name": "아나",
             "role": "SUPPORT",
-            "winRate": 49.9,
-            "pickRate": 54.3
+            "winRate": 50,
+            "pickRate": 54.8
         },
         {
             "id": "anran",
             "name": "안란",
             "role": "DAMAGE",
-            "winRate": 50,
-            "pickRate": 16.3
+            "winRate": 50.1,
+            "pickRate": 15.8
         },
         {
             "id": "ashe",
             "name": "애쉬",
             "role": "DAMAGE",
-            "winRate": 51.6,
-            "pickRate": 13.9
+            "winRate": 51.7,
+            "pickRate": 14
         },
         {
             "id": "echo",
             "name": "에코",
             "role": "DAMAGE",
             "winRate": 52.5,
-            "pickRate": 5.3
+            "pickRate": 5.4
         },
         {
             "id": "emre",
             "name": "엠레",
             "role": "DAMAGE",
-            "winRate": 48.2,
-            "pickRate": 20.9
+            "winRate": 48.3,
+            "pickRate": 19.8
         },
         {
             "id": "orisa",
             "name": "오리사",
             "role": "TANK",
-            "winRate": 44.6,
-            "pickRate": 7.4
+            "winRate": 44.8,
+            "pickRate": 7.5
         },
         {
             "id": "wuyang",
             "name": "우양",
             "role": "SUPPORT",
-            "winRate": 52.1,
-            "pickRate": 12.7
+            "winRate": 52,
+            "pickRate": 12.9
         },
         {
             "id": "widowmaker",
             "name": "위도우메이커",
             "role": "DAMAGE",
-            "winRate": 49.8,
+            "winRate": 50,
             "pickRate": 4.5
         },
         {
             "id": "winston",
             "name": "윈스턴",
             "role": "TANK",
-            "winRate": 52.4,
-            "pickRate": 11
+            "winRate": 52.5,
+            "pickRate": 11.3
         },
         {
             "id": "illari",
             "name": "일리아리",
             "role": "SUPPORT",
-            "winRate": 55.2,
-            "pickRate": 11.4
+            "winRate": 55.1,
+            "pickRate": 11.5
         },
         {
             "id": "zarya",
             "name": "자리야",
             "role": "TANK",
-            "winRate": 47.4,
+            "winRate": 47.3,
             "pickRate": 9.1
         },
         {
             "id": "junker-queen",
             "name": "정커퀸",
             "role": "TANK",
-            "winRate": 51.9,
+            "winRate": 51.7,
             "pickRate": 3.1
         },
         {
@@ -1685,56 +1685,56 @@
             "id": "jetpack-cat",
             "name": "제트팩 캣",
             "role": "SUPPORT",
-            "winRate": 50.9,
-            "pickRate": 7.3
+            "winRate": 51.2,
+            "pickRate": 7
         },
         {
             "id": "zenyatta",
             "name": "젠야타",
             "role": "SUPPORT",
-            "winRate": 52.1,
-            "pickRate": 10.2
+            "winRate": 52.2,
+            "pickRate": 10.4
         },
         {
             "id": "juno",
             "name": "주노",
             "role": "SUPPORT",
-            "winRate": 50.2,
+            "winRate": 50,
             "pickRate": 7.2
         },
         {
             "id": "cassidy",
             "name": "캐서디",
             "role": "DAMAGE",
-            "winRate": 46.7,
-            "pickRate": 24.9
+            "winRate": 46.6,
+            "pickRate": 25.2
         },
         {
             "id": "kiriko",
             "name": "키리코",
             "role": "SUPPORT",
-            "winRate": 46.6,
-            "pickRate": 29.7
+            "winRate": 46.7,
+            "pickRate": 30.2
         },
         {
             "id": "torbjorn",
             "name": "토르비욘",
             "role": "DAMAGE",
-            "winRate": 43.7,
+            "winRate": 44,
             "pickRate": 2.4
         },
         {
             "id": "tracer",
             "name": "트레이서",
             "role": "DAMAGE",
-            "winRate": 50.8,
-            "pickRate": 8.4
+            "winRate": 50.9,
+            "pickRate": 8.5
         },
         {
             "id": "pharah",
             "name": "파라",
             "role": "DAMAGE",
-            "winRate": 53.3,
+            "winRate": 53.4,
             "pickRate": 5
         },
         {
@@ -1748,14 +1748,14 @@
             "id": "hanzo",
             "name": "한조",
             "role": "DAMAGE",
-            "winRate": 49,
-            "pickRate": 7.6
+            "winRate": 49.1,
+            "pickRate": 7.8
         },
         {
             "id": "hazard",
             "name": "해저드",
             "role": "TANK",
-            "winRate": 48,
+            "winRate": 47.9,
             "pickRate": 2
         }
     ],
