@@ -119,6 +119,7 @@
         heroes.forEach(h => {
             const p = parseFloat(h.pickRate) || 0;
             const w = parseFloat(h.winRate) || 0;
+            // 문태웅 님 제안: 픽률 60% + 승률 40% 가중치 메타지수
             h.metaScore = (p * 6) + (w * 0.4); 
         });
 
@@ -127,12 +128,13 @@
         heroes.forEach(hero => {
             const score = hero.metaScore;
             let targetId;
-            if (score >= 50) targetId = "list-S";
-            else if (score >= 40) targetId = "list-A";
-            else if (score >= 30) targetId = "list-B";
-            else if (score >= 20) targetId = "list-C";
-            else if (score >= 10) targetId = "list-D";
-            else if (score >= 5) targetId = "list-E";
+            // S티어 정예화를 위해 커트라인을 150점으로 상향 조정
+            if (score >= 150) targetId = "list-S";
+            else if (score >= 100) targetId = "list-A";
+            else if (score >= 75) targetId = "list-B";
+            else if (score >= 50) targetId = "list-C";
+            else if (score >= 30) targetId = "list-D";
+            else if (score >= 15) targetId = "list-E";
             else targetId = "list-F";
 
             const roleColor = roleMap[hero.id] === "tank" ? "#4d88ff" : roleMap[hero.id] === "support" ? "#4dff88" : "#ff4d4d";
