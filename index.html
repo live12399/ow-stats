@@ -9,7 +9,6 @@
         .header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 20px; }
         h1 { text-shadow: 2px 2px 0px #ff9c00; color: #ff9c00; font-style: italic; }
 
-        /* 티어 라벨 색상 */
         .tier-S { background: #ff4d4d !important; color: white !important; }
         .tier-A { background: #ff9c00 !important; color: black !important; }
         .tier-B { background: #ffff4d !important; color: black !important; }
@@ -18,10 +17,10 @@
         .tier-E { background: #999999 !important; color: white !important; }
         .tier-F { background: #333333 !important; color: white !important; }
         
-        .controls { margin: 20px 0; display: flex; flex-direction: column; gap: 10px; }
+        .controls { margin: 20px 0; display: flex; flex-direction: column; gap: 15px; }
         .filter-group { display: flex; gap: 10px; align-items: center; }
-        select { padding: 10px; background: #222; color: white; border-radius: 5px; border: 1px solid #444; }
-        .filter-btn { padding: 8px 12px; border: none; border-radius: 5px; cursor: pointer; background: #333; color: #ccc; transition: 0.2s; }
+        select { padding: 10px; background: #222; color: white; border-radius: 5px; border: 1px solid #444; min-width: 150px; }
+        .filter-btn { padding: 10px 15px; border: none; border-radius: 5px; cursor: pointer; background: #333; color: #ccc; transition: 0.3s; }
         .filter-btn.active { background: #ff9c00; color: black; font-weight: bold; }
 
         .tier-row { display: flex; margin-bottom: 15px; background: rgba(30,30,30,0.6); border-radius: 8px; min-height: 120px; backdrop-filter: blur(5px); border: 1px solid rgba(255,255,255,0.05); }
@@ -75,12 +74,12 @@
 
     <div id="ai-analysis">
         <h3 style="color: #009cff; margin-top: 0;">🤖 Javis의 메타 분석 (Gemini AI)</h3>
-        <p id="ai-content" style="line-height: 1.6; color: #ddd;">분석 데이터를 불러오는 중...</p>
+        <p id="ai-content" style="line-height: 1.6; color: #ddd;">분석 결과를 불러오는 중...</p>
     </div>
 
     <div id="modal" onclick="closeModal()">
         <div class="modal-content" onclick="event.stopPropagation()">
-            <h2 id="modal-title">승률 추세</h2>
+            <h2 id="modal-title">영웅 추세</h2>
             <canvas id="trendChart"></canvas>
         </div>
     </div>
@@ -105,16 +104,19 @@
     function render() {
         ['S', 'A', 'B', 'C', 'D', 'E', 'F'].forEach(t => document.getElementById(`list-${t}`).innerHTML = "");
         
-        // 3. 선택된 티어(Rank)에 맞는 데이터 추출
-        const rawHeroes = allData[currentRank];
-        if (!rawHeroes) return;
+        // 데이터 키값 불일치 방지를 위한 안전 장치
+        const rawHeroes = allData[currentRank] || allData[currentRank.toLowerCase()];
+        if (!rawHeroes) {
+            console.error(`${currentRank} 데이터를 찾을 수 없습니다.`);
+            return;
+        }
 
         let heroes = currentRole === 'all' ? [...rawHeroes] : rawHeroes.filter(h => roleMap[h.id] === currentRole);
         
-        // 4. 메타 지수 계산 (6:4 가중치)
         heroes.forEach(h => {
             const p = parseFloat(h.pickRate) || 0;
             const w = parseFloat(h.winRate) || 0;
+            // 픽률 60% 가중치 메타지수
             h.metaScore = (p * 6) + (w * 0.4); 
         });
 
@@ -123,7 +125,7 @@
         heroes.forEach(hero => {
             const score = hero.metaScore;
             let targetId;
-            // 정예 S티어 기준 (150점 이상)
+            // 정예 S티어 커트라인 150점
             if (score >= 150) targetId = "list-S";
             else if (score >= 100) targetId = "list-A";
             else if (score >= 75) targetId = "list-B";
@@ -144,12 +146,7 @@
         fetch('./analysis.json?t=' + Date.now()).then(r => r.json()).then(data => { document.getElementById('ai-content').innerText = data.analysis; }).catch(() => {});
     }
 
-    // 5. 티어 선택 이벤트 연결
-    document.getElementById('rank-select').addEventListener('change', e => { 
-        currentRank = e.target.value; 
-        render(); 
-    });
-
+    document.getElementById('rank-select').addEventListener('change', e => { currentRank = e.target.value; render(); });
     document.querySelectorAll('.filter-btn').forEach(btn => {
         btn.addEventListener('click', function() {
             document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
@@ -164,7 +161,8 @@
         document.getElementById('modal-title').innerText = `${heroName} 승률 추세`;
         const labels = historyData.map(d => d.date);
         const data = historyData.map(d => {
-            const h = d.data[currentRank].find(x => x.id === heroId);
+            const rankData = d.data[currentRank] || d.data[currentRank.toLowerCase()];
+            const h = rankData ? rankData.find(x => x.id === heroId) : null;
             return h ? h.winRate : null;
         });
         if (trendChart) trendChart.destroy();
