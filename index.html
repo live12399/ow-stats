@@ -9,7 +9,7 @@
         .header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 20px; }
         h1 { text-shadow: 2px 2px 0px #ff9c00; color: #ff9c00; font-style: italic; }
 
-        /* 티어 라벨 색상 세분화 */
+        /* 티어 라벨 색상 */
         .tier-S { background: #ff4d4d !important; color: white !important; }
         .tier-A { background: #ff9c00 !important; color: black !important; }
         .tier-B { background: #ffff4d !important; color: black !important; }
@@ -18,24 +18,24 @@
         .tier-E { background: #999999 !important; color: white !important; }
         .tier-F { background: #333333 !important; color: white !important; }
         
-        .controls { margin: 20px 0; display: flex; gap: 15px; }
+        .controls { margin: 20px 0; display: flex; flex-direction: column; gap: 10px; }
+        .filter-group { display: flex; gap: 10px; align-items: center; }
         select { padding: 10px; background: #222; color: white; border-radius: 5px; border: 1px solid #444; }
-        .filter-btn { padding: 10px 15px; border: none; border-radius: 5px; cursor: pointer; background: #333; color: #ccc; transition: 0.3s; }
+        .filter-btn { padding: 8px 12px; border: none; border-radius: 5px; cursor: pointer; background: #333; color: #ccc; transition: 0.2s; }
         .filter-btn.active { background: #ff9c00; color: black; font-weight: bold; }
 
         .tier-row { display: flex; margin-bottom: 15px; background: rgba(30,30,30,0.6); border-radius: 8px; min-height: 120px; backdrop-filter: blur(5px); border: 1px solid rgba(255,255,255,0.05); }
         .tier-label { width: 80px; display: flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: bold; font-family: 'Impact'; }
         .hero-list { display: flex; flex-wrap: wrap; gap: 10px; padding: 15px; flex-grow: 1; }
 
-        .hero-card { background: rgba(255,255,255,0.05); padding: 8px; border-radius: 8px; width: 90px; text-align: center; border-bottom: 4px solid #ccc; cursor: pointer; transition: 0.2s; }
+        .hero-card { background: rgba(255,255,255,0.05); padding: 8px; border-radius: 8px; width: 95px; text-align: center; border-bottom: 4px solid #ccc; cursor: pointer; transition: 0.2s; }
         .hero-card:hover { transform: scale(1.05); border-color: #ff9c00; background: rgba(255,255,255,0.1); }
-        .hero-img { width: 100%; height: 70px; border-radius: 5px; object-fit: cover; }
-        .stats { font-size: 0.8rem; font-weight: bold; display: block; margin-top: 5px; }
+        .hero-img { width: 100%; height: 75px; border-radius: 5px; object-fit: cover; }
+        .stats { font-size: 0.75rem; font-weight: bold; display: block; margin-top: 5px; }
 
         #ai-analysis { margin-top:40px; background: rgba(0, 156, 255, 0.1); border: 1px solid #009cff; padding: 20px; border-radius: 10px; }
-
         #modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 1000; align-items: center; justify-content: center; }
-        .modal-content { background: #1a1a1a; padding: 30px; border-radius: 15px; width: 90%; max-width: 600px; border: 1px solid #444; }
+        .modal-content { background: #1a1a1a; padding: 30px; border-radius: 15px; width: 90%; max-width: 600px; }
     </style>
 </head>
 <body>
@@ -43,22 +43,24 @@
     <div class="header">
         <h1>Overwatch 2 Meta Analysis</h1>
         <select id="rank-select">
-            <option value="all">🏆 전체</option>
+            <option value="all">🏆 전체 랭크</option>
             <option value="bronze">🥉 브론즈</option>
             <option value="silver">🥈 실버</option>
             <option value="gold">🥇 골드</option>
             <option value="platinum">💠 플래티넘</option>
             <option value="diamond">💎 다이아몬드</option>
             <option value="master">🔮 마스터</option>
-            <option value="grandmaster">🔥 그마</option>
+            <option value="grandmaster">🔥 그랜드마스터</option>
         </select>
     </div>
 
     <div class="controls">
-        <button class="filter-btn active" data-role="all">전체</button>
-        <button class="filter-btn" data-role="tank">🛡️ 돌격</button>
-        <button class="filter-btn" data-role="damage">⚔️ 공격</button>
-        <button class="filter-btn" data-role="support">🚑 지원</button>
+        <div class="filter-group">
+            <button class="filter-btn active" data-role="all">전체 역할</button>
+            <button class="filter-btn" data-role="tank">🛡️ 돌격</button>
+            <button class="filter-btn" data-role="damage">⚔️ 공격</button>
+            <button class="filter-btn" data-role="support">🚑 지원</button>
+        </div>
     </div>
 
     <div id="main-container">
@@ -73,53 +75,46 @@
 
     <div id="ai-analysis">
         <h3 style="color: #009cff; margin-top: 0;">🤖 Javis의 메타 분석 (Gemini AI)</h3>
-        <p id="ai-content" style="line-height: 1.6; color: #ddd;">매일 새벽 1시, 로봇이 수집한 데이터를 바탕으로 분석을 시작합니다.</p>
+        <p id="ai-content" style="line-height: 1.6; color: #ddd;">분석 데이터를 불러오는 중...</p>
     </div>
 
     <div id="modal" onclick="closeModal()">
         <div class="modal-content" onclick="event.stopPropagation()">
-            <h2 id="modal-title" style="margin-top:0;">영웅 추세</h2>
+            <h2 id="modal-title">승률 추세</h2>
             <canvas id="trendChart"></canvas>
-            <p style="color:#888; font-size:12px; margin-top:15px;">* 최근 30일간의 승률 변화를 보여줍니다.</p>
         </div>
     </div>
 
     <script>
     const roleMap = {
-        "dva": "tank", "doomfist": "tank", "junker-queen": "tank", "orisa": "tank", "ramattra": "tank", "reinhardt": "tank", "roadhog": "tank", "sigma": "tank", "winston": "tank", "wrecking-ball": "tank", "zarya": "tank", "mauga": "tank", "hazard": "tank",
-        "domina": "tank", "emre": "tank", 
-        "ashe": "damage", "bastion": "damage", "cassidy": "damage", "echo": "damage", "genji": "damage", "hanzo": "damage", "junkrat": "damage", "mei": "damage", "pharah": "damage", "reaper": "damage", "sojourn": "damage", "soldier-76": "damage", "sombra": "damage", "symmetra": "damage", "torbjorn": "damage", "tracer": "damage", "widowmaker": "damage", "venture": "damage",
-        "jetpack-cat": "damage", "anran": "damage",
-        "ana": "support", "baptiste": "support", "brigitte": "support", "illari": "support", "kiriko": "support", "lifeweaver": "support", "lucio": "support", "mercy": "support", "moira": "support", "zenyatta": "support", "juno": "support",
-        "mizuki": "support"
+        "dva": "tank", "doomfist": "tank", "junker-queen": "tank", "orisa": "tank", "ramattra": "tank", "reinhardt": "tank", "roadhog": "tank", "sigma": "tank", "winston": "tank", "wrecking-ball": "tank", "zarya": "tank", "mauga": "tank", "hazard": "tank", "domina": "tank", "emre": "tank",
+        "ashe": "damage", "bastion": "damage", "cassidy": "damage", "echo": "damage", "genji": "damage", "hanzo": "damage", "junkrat": "damage", "mei": "damage", "pharah": "damage", "reaper": "damage", "sojourn": "damage", "soldier-76": "damage", "sombra": "damage", "symmetra": "damage", "torbjorn": "damage", "tracer": "damage", "widowmaker": "damage", "venture": "damage", "jetpack-cat": "damage", "anran": "damage",
+        "ana": "support", "baptiste": "support", "brigitte": "support", "illari": "support", "kiriko": "support", "lifeweaver": "support", "lucio": "support", "mercy": "support", "moira": "support", "zenyatta": "support", "juno": "support", "mizuki": "support"
     };
 
-    let allData = {}; 
-    let historyData = [];
-    let currentRank = 'all';
-    let currentRole = 'all';
-    let trendChart = null;
+    let allData = {}; let historyData = []; let currentRank = 'all'; let currentRole = 'all'; let trendChart = null;
 
     Promise.all([
         fetch('./heroes.json?t=' + Date.now()).then(r => r.json()),
         fetch('./history.json?t=' + Date.now()).then(r => r.json()).catch(() => [])
     ]).then(([current, history]) => {
-        allData = current;
-        historyData = history;
+        allData = current; historyData = history;
         render();
     });
 
     function render() {
         ['S', 'A', 'B', 'C', 'D', 'E', 'F'].forEach(t => document.getElementById(`list-${t}`).innerHTML = "");
+        
+        // 3. 선택된 티어(Rank)에 맞는 데이터 추출
         const rawHeroes = allData[currentRank];
         if (!rawHeroes) return;
 
         let heroes = currentRole === 'all' ? [...rawHeroes] : rawHeroes.filter(h => roleMap[h.id] === currentRole);
         
+        // 4. 메타 지수 계산 (6:4 가중치)
         heroes.forEach(h => {
             const p = parseFloat(h.pickRate) || 0;
             const w = parseFloat(h.winRate) || 0;
-            // 문태웅 님 제안: 픽률 60% + 승률 40% 가중치 메타지수
             h.metaScore = (p * 6) + (w * 0.4); 
         });
 
@@ -128,7 +123,7 @@
         heroes.forEach(hero => {
             const score = hero.metaScore;
             let targetId;
-            // S티어 정예화를 위해 커트라인을 150점으로 상향 조정
+            // 정예 S티어 기준 (150점 이상)
             if (score >= 150) targetId = "list-S";
             else if (score >= 100) targetId = "list-A";
             else if (score >= 75) targetId = "list-B";
@@ -138,58 +133,23 @@
             else targetId = "list-F";
 
             const roleColor = roleMap[hero.id] === "tank" ? "#4d88ff" : roleMap[hero.id] === "support" ? "#4dff88" : "#ff4d4d";
-            
             document.getElementById(targetId).innerHTML += `
                 <div class="hero-card" style="border-bottom-color:${roleColor}" onclick="openTrend('${hero.id}', '${hero.name}')">
                     <img src="./images/${hero.id}.png" class="hero-img" onerror="this.src='https://placehold.co/80?text=NoImg'">
-                    <span class="stats" style="color:${roleColor}">메타지수 ${score.toFixed(1)}</span>
+                    <span class="stats" style="color:${roleColor}">점수 ${score.toFixed(1)}</span>
                     <div style="font-size:10px; color:#aaa;">픽 ${hero.pickRate}% | 승 ${hero.winRate}%</div>
-                </div>
-            `;
+                </div>`;
         });
 
-        fetch('./analysis.json?t=' + Date.now())
-            .then(r => r.json())
-            .then(data => { document.getElementById('ai-content').innerText = data.analysis; })
-            .catch(() => {});
+        fetch('./analysis.json?t=' + Date.now()).then(r => r.json()).then(data => { document.getElementById('ai-content').innerText = data.analysis; }).catch(() => {});
     }
 
-    function openTrend(heroId, heroName) {
-        document.getElementById('modal').style.display = 'flex';
-        document.getElementById('modal-title').innerText = `${heroName} 최근 승률 추세`;
+    // 5. 티어 선택 이벤트 연결
+    document.getElementById('rank-select').addEventListener('change', e => { 
+        currentRank = e.target.value; 
+        render(); 
+    });
 
-        const labels = historyData.map(d => d.date);
-        const data = historyData.map(d => {
-            const h = d.data[currentRank].find(x => x.id === heroId);
-            return h ? h.winRate : null;
-        });
-
-        if (trendChart) trendChart.destroy();
-        const ctx = document.getElementById('trendChart').getContext('2d');
-        trendChart = new Chart(ctx, {
-            type: 'line',
-            data: {
-                labels: labels,
-                datasets: [{
-                    label: '승률 (%)',
-                    data: data,
-                    borderColor: '#ff9c00',
-                    tension: 0.3,
-                    fill: true,
-                    backgroundColor: 'rgba(255, 156, 0, 0.1)'
-                }]
-            },
-            options: {
-                scales: { y: { grid: { color: '#333' }, ticks: { color: '#ccc' } }, x: { grid: { color: '#333' }, ticks: { color: '#ccc' } } },
-                plugins: { legend: { display: false } }
-            }
-        });
-    }
-
-    function closeModal() { document.getElementById('modal').style.display = 'none'; }
-    
-    document.getElementById('rank-select').addEventListener('change', e => { currentRank = e.target.value; render(); });
-    
     document.querySelectorAll('.filter-btn').forEach(btn => {
         btn.addEventListener('click', function() {
             document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
@@ -198,6 +158,26 @@
             render();
         });
     });
+
+    function openTrend(heroId, heroName) {
+        document.getElementById('modal').style.display = 'flex';
+        document.getElementById('modal-title').innerText = `${heroName} 승률 추세`;
+        const labels = historyData.map(d => d.date);
+        const data = historyData.map(d => {
+            const h = d.data[currentRank].find(x => x.id === heroId);
+            return h ? h.winRate : null;
+        });
+        if (trendChart) trendChart.destroy();
+        const ctx = document.getElementById('trendChart').getContext('2d');
+        trendChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: [{ label: '승률 (%)', data: data, borderColor: '#ff9c00', tension: 0.3 }]
+            }
+        });
+    }
+    function closeModal() { document.getElementById('modal').style.display = 'none'; }
     </script>
 </body>
 </html>
