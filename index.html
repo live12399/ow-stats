@@ -89,78 +89,87 @@
         </div>
     </div>
 
-    <script>
-        const roleMap = {
-            "dva": "tank", "doomfist": "tank", "junker-queen": "tank", "orisa": "tank", "ramattra": "tank", "reinhardt": "tank", "roadhog": "tank", "sigma": "tank", "winston": "tank", "wrecking-ball": "tank", "zarya": "tank", "mauga": "tank", "hazard": "tank",
-            "ashe": "damage", "bastion": "damage", "cassidy": "damage", "echo": "damage", "genji": "damage", "hanzo": "damage", "junkrat": "damage", "mei": "damage", "pharah": "damage", "reaper": "damage", "sojourn": "damage", "soldier-76": "damage", "sombra": "damage", "symmetra": "damage", "torbjorn": "damage", "tracer": "damage", "widowmaker": "damage", "venture": "damage",
-            "ana": "support", "baptiste": "support", "brigitte": "support", "illari": "support", "kiriko": "support", "lifeweaver": "support", "lucio": "support", "mercy": "support", "moira": "support", "zenyatta": "support", "juno": "support"
-        };
+   <script>
+    // 1. 신규 및 특수 영웅 포지션 강제 배정
+    const roleMap = {
+        "dva": "tank", "doomfist": "tank", "junker-queen": "tank", "orisa": "tank", "ramattra": "tank", "reinhardt": "tank", "roadhog": "tank", "sigma": "tank", "winston": "tank", "wrecking-ball": "tank", "zarya": "tank", "mauga": "tank", "hazard": "tank",
+        "domina": "tank", "emre": "tank", // 추가된 탱커
+        "ashe": "damage", "bastion": "damage", "cassidy": "damage", "echo": "damage", "genji": "damage", "hanzo": "damage", "junkrat": "damage", "mei": "damage", "pharah": "damage", "reaper": "damage", "sojourn": "damage", "soldier-76": "damage", "sombra": "damage", "symmetra": "damage", "torbjorn": "damage", "tracer": "damage", "widowmaker": "damage", "venture": "damage",
+        "jetpack-cat": "damage", "anran": "damage", // 추가된 딜러
+        "ana": "support", "baptiste": "support", "brigitte": "support", "illari": "support", "kiriko": "support", "lifeweaver": "support", "lucio": "support", "mercy": "support", "moira": "support", "zenyatta": "support", "juno": "support",
+        "mizuki": "support" // 추가된 힐러
+    };
 
-        let allData = {}; 
-        let historyData = [];
-        let currentRank = 'all';
-        let currentRole = 'all';
-        let trendChart = null;
+    let allData = {}; 
+    let historyData = [];
+    let currentRank = 'all';
+    let currentRole = 'all';
 
-        // 데이터 로드
-        Promise.all([
-            fetch('./heroes.json?t=' + Date.now()).then(r => r.json()),
-            fetch('./history.json?t=' + Date.now()).then(r => r.json()).catch(() => [])
-        ]).then(([current, history]) => {
-            allData = current;
-            historyData = history;
-            render();
+    // 데이터 로드 부분은 기존과 동일
+    Promise.all([
+        fetch('./heroes.json?t=' + Date.now()).then(r => r.json()),
+        fetch('./history.json?t=' + Date.now()).then(r => r.json()).catch(() => [])
+    ]).then(([current, history]) => {
+        allData = current;
+        historyData = history;
+        render();
+    });
+
+    // 문태웅 님이 찾으시던 바로 그 '랜더(render)' 함수입니다!
+    function render() {
+        // 티어 리스트 초기화
+        ['S', 'A', 'B', 'C', 'D', 'E', 'F'].forEach(t => document.getElementById(`list-${t}`).innerHTML = "");
+        
+        const rawHeroes = allData[currentRank];
+        if (!rawHeroes) return;
+
+        let heroes = currentRole === 'all' ? [...rawHeroes] : rawHeroes.filter(h => roleMap[h.id] === currentRole);
+        
+        // 2. 메타 지수 계산 (픽률 6 : 승률 4 가중치)
+        heroes.forEach(h => {
+            const p = parseFloat(h.pickRate) || 0;
+            const w = parseFloat(h.winRate) || 0;
+            // 픽률 가중치를 6배로 높여 '대세감'을 반영합니다.
+            h.metaScore = (p * 6) + (w * 0.4); 
         });
 
-        function render() {
-            // 모든 리스트 초기화
-            ['S', 'A', 'B', 'C', 'D', 'E', 'F'].forEach(t => {
-                const el = document.getElementById(`list-${t}`);
-                if (el) el.innerHTML = "";
-            });
+        // 점수 순 정렬
+        heroes.sort((a, b) => b.metaScore - a.metaScore);
 
-            const rawHeroes = allData[currentRank];
-            if (!rawHeroes) return;
-
-            let heroes = currentRole === 'all' ? [...rawHeroes] : rawHeroes.filter(h => roleMap[h.id] === currentRole);
+        // 3. 티어 배분
+        heroes.forEach(hero => {
+            const score = hero.metaScore;
+            let targetId;
             
-            // 승률 기반 티어 분류 로직
-            heroes.forEach(hero => {
-                const wr = hero.winRate;
-                let targetId;
-                
-                if (wr >= 54) targetId = "list-S";
-                else if (wr >= 52) targetId = "list-A";
-                else if (wr >= 50) targetId = "list-B";
-                else if (wr >= 48) targetId = "list-C";
-                else if (wr >= 46) targetId = "list-D";
-                else if (wr >= 44) targetId = "list-E";
-                else targetId = "list-F";
+            // 픽률 비중이 높으므로 기준점을 높게 잡았습니다.
+            if (score >= 50) targetId = "list-S";
+            else if (score >= 40) targetId = "list-A";
+            else if (score >= 30) targetId = "list-B";
+            else if (score >= 20) targetId = "list-C";
+            else if (score >= 10) targetId = "list-D";
+            else if (score >= 5) targetId = "list-E";
+            else targetId = "list-F";
 
-                const roleColor = roleMap[hero.id] === "tank" ? "#4d88ff" : roleMap[hero.id] === "support" ? "#4dff88" : "#ff4d4d";
-                
-                const listEl = document.getElementById(targetId);
-                if (listEl) {
-                    listEl.innerHTML += `
-                        <div class="hero-card" style="border-bottom-color:${roleColor}" onclick="openTrend('${hero.id}', '${hero.name}')">
-                            <img src="./images/${hero.id}.png" class="hero-img" onerror="this.src='https://placehold.co/80?text=NoImg'">
-                            <span class="stats" style="color:${roleColor}">픽률 ${hero.pickRate}%</span>
-                            <div style="font-size:10px; color:#aaa;">승률 ${hero.winRate}%</div>
-                        </div>
-                    `;
-                }
-            });
+            const roleColor = roleMap[hero.id] === "tank" ? "#4d88ff" : roleMap[hero.id] === "support" ? "#4dff88" : "#ff4d4d";
+            
+            document.getElementById(targetId).innerHTML += `
+                <div class="hero-card" style="border-bottom-color:${roleColor}" onclick="openTrend('${hero.id}', '${hero.name}')">
+                    <img src="./images/${hero.id}.png" class="hero-img" onerror="this.src='https://placehold.co/80?text=NoImg'">
+                    <span class="stats" style="color:${roleColor}">메타지수 ${score.toFixed(1)}</span>
+                    <div style="font-size:10px; color:#aaa;">픽 ${hero.pickRate}% | 승 ${hero.winRate}%</div>
+                </div>
+            `;
+        });
 
-            // Gemini AI 분석 파일 로드
-            fetch('./analysis.json?t=' + Date.now())
-                .then(r => r.json())
-                .then(data => {
-                    document.getElementById('ai-content').innerText = data.analysis || "분석 데이터가 아직 생성되지 않았습니다.";
-                })
-                .catch(() => {
-                    // 파일이 없을 경우 기본 텍스트 유지
-                });
-        }
+        // Javis 분석 데이터 로드 (기존과 동일)
+        fetch('./analysis.json?t=' + Date.now())
+            .then(r => r.json())
+            .then(data => { document.getElementById('ai-content').innerText = data.analysis; })
+            .catch(() => {});
+    }
+    
+    // ... 나머지 openTrend, closeModal 함수 등은 그대로 두시면 됩니다 ...
+</script>
 
         function openTrend(heroId, heroName) {
             document.getElementById('modal').style.display = 'flex';
@@ -209,3 +218,4 @@
     </script>
 </body>
 </html>
+
