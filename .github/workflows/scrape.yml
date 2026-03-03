@@ -24,7 +24,7 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y google-chrome-stable
 
-      # 2. 필수 라이브러리 설치 (가장 중요!)
+      # 2. 필수 라이브러리 설치
       - name: Install dependencies
         run: |
           pip install selenium webdriver-manager google-generativeai beautifulsoup4 requests
@@ -39,11 +39,17 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: python analysis_gen.py
 
-      # 5. 변경된 데이터(JSON)를 깃허브에 저장
+      # 5. 변경된 데이터(JSON)를 깃허브에 저장 (강제 업데이트 포함)
       - name: Commit and Push changes
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          
+          # 서버의 최신 변경사항을 가져와서 합침 (충돌 방지)
+          git pull origin main --rebase || echo "No remote changes to rebase"
+          
           git add heroes.json history.json analysis.json
           git commit -m "Update Overwatch Data: $(date)" || echo "No changes to commit"
-          git push
+          
+          # 충돌을 무시하고 강제로 푸시하여 사이트 업데이트를 보장함
+          git push origin main --force
