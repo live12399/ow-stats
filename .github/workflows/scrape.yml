@@ -1,15 +1,14 @@
 name: Overwatch Data and AI Analysis
 
 on:
-  schedule:
-    - cron: '0 16 * * *' # 한국 시간 매일 새벽 1시
-  workflow_dispatch: # 수동 실행 버튼 생성
+  workflow_dispatch: # 수동 실행 버튼 활성화
 
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v3
 
       - name: Set up Python
@@ -17,21 +16,34 @@ jobs:
         with:
           python-version: '3.9'
 
-      - name: Install dependencies
-        run: pip install requests beautifulsoup4 google-generativeai
+      # 1. 셀레니움 실행을 위한 크롬 브라우저 설치
+      - name: Install Google Chrome
+        run: |
+          wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+          sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
+          sudo apt-get update
+          sudo apt-get install -y google-chrome-stable
 
-      - name: Run Scraper
+      # 2. 필수 라이브러리 설치 (가장 중요!)
+      - name: Install dependencies
+        run: |
+          pip install selenium webdriver-manager google-generativeai beautifulsoup4 requests
+
+      # 3. 스크레이퍼 실행
+      - name: Run scraper.py
         run: python scraper.py
 
+      # 4. 제미나이 분석 실행
       - name: Run Gemini Analysis
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: python analysis_gen.py
 
+      # 5. 변경된 데이터(JSON)를 깃허브에 저장
       - name: Commit and Push changes
         run: |
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "actions@github.com"
-          git add history.json heroes.json analysis.json
-          git commit -m "Update Overwatch Data and Javis Analysis" || echo "No changes"
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add heroes.json history.json analysis.json
+          git commit -m "Update Overwatch Data: $(date)" || echo "No changes to commit"
           git push
