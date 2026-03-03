@@ -68,3 +68,15 @@ with open('analysis.json', 'w', encoding='utf-8') as f:
     json.dump(analysis_result, f, ensure_ascii=False, indent=4)
 
 print("✨ Javis가 성공적으로 티어별 메타 리포트를 업데이트했습니다.")
+import google.generativeai as genai
+import os
+
+genai.configure(api_key=os.environ["GEMINI_API_KEY"])
+
+# ⚠️ 디버깅용: 사용 가능한 모델 리스트 출력
+print("🔎 사용 가능한 모델 목록:")
+for m in genai.list_models():
+    if 'generateContent' in m.supported_generation_methods:
+        print(f"ID: {m.name}")
+
+# 이 로그를 통해 'models/gemini-1.5-flash'가 정확히 목록에 있는지 확인해야 합니다.
