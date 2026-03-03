@@ -19,7 +19,7 @@
         
         .controls { margin: 20px 0; display: flex; flex-direction: column; gap: 15px; }
         .filter-group { display: flex; gap: 10px; align-items: center; }
-        select { padding: 10px; background: #222; color: white; border-radius: 5px; border: 1px solid #444; min-width: 150px; }
+        select { padding: 10px; background: #222; color: white; border-radius: 5px; border: 1px solid #444; min-width: 150px; cursor: pointer; }
         .filter-btn { padding: 10px 15px; border: none; border-radius: 5px; cursor: pointer; background: #333; color: #ccc; transition: 0.3s; }
         .filter-btn.active { background: #ff9c00; color: black; font-weight: bold; }
 
@@ -50,6 +50,7 @@
             <option value="diamond">💎 다이아몬드</option>
             <option value="master">🔮 마스터</option>
             <option value="grandmaster">🔥 그랜드마스터</option>
+            <option value="champion">👑 챔피언 (Top 500)</option>
         </select>
     </div>
 
@@ -79,20 +80,22 @@
 
     <div id="modal" onclick="closeModal()">
         <div class="modal-content" onclick="event.stopPropagation()">
-            <h2 id="modal-title">영웅 추세</h2>
+            <h2 id="modal-title" style="margin-top:0;">영웅 추세</h2>
             <canvas id="trendChart"></canvas>
         </div>
     </div>
 
     <script>
+    // 영웅 역할 정의 (보내주신 ID 기준)
     const roleMap = {
         "dva": "tank", "doomfist": "tank", "junker-queen": "tank", "orisa": "tank", "ramattra": "tank", "reinhardt": "tank", "roadhog": "tank", "sigma": "tank", "winston": "tank", "wrecking-ball": "tank", "zarya": "tank", "mauga": "tank", "hazard": "tank", "domina": "tank", "emre": "tank",
-        "ashe": "damage", "bastion": "damage", "cassidy": "damage", "echo": "damage", "genji": "damage", "hanzo": "damage", "junkrat": "damage", "mei": "damage", "pharah": "damage", "reaper": "damage", "sojourn": "damage", "soldier-76": "damage", "sombra": "damage", "symmetra": "damage", "torbjorn": "damage", "tracer": "damage", "widowmaker": "damage", "venture": "damage", "jetpack-cat": "damage", "anran": "damage",
-        "ana": "support", "baptiste": "support", "brigitte": "support", "illari": "support", "kiriko": "support", "lifeweaver": "support", "lucio": "support", "mercy": "support", "moira": "support", "zenyatta": "support", "juno": "support", "mizuki": "support"
+        "ashe": "damage", "bastion": "damage", "cassidy": "damage", "echo": "damage", "genji": "damage", "hanzo": "damage", "junkrat": "damage", "mei": "damage", "pharah": "damage", "reaper": "damage", "sojourn": "damage", "soldier-76": "damage", "sombra": "damage", "symmetra": "damage", "torbjorn": "damage", "tracer": "damage", "widowmaker": "damage", "venture": "damage", "vendetta": "damage", "freja": "damage", "anran": "damage", "jetpack-cat": "damage",
+        "ana": "support", "baptiste": "support", "brigitte": "support", "illari": "support", "kiriko": "support", "lifeweaver": "support", "lucio": "support", "mercy": "support", "moira": "support", "zenyatta": "support", "juno": "support", "mizuki": "support", "wuyang": "support"
     };
 
     let allData = {}; let historyData = []; let currentRank = 'all'; let currentRole = 'all'; let trendChart = null;
 
+    // 데이터 로드
     Promise.all([
         fetch('./heroes.json?t=' + Date.now()).then(r => r.json()),
         fetch('./history.json?t=' + Date.now()).then(r => r.json()).catch(() => [])
@@ -104,48 +107,54 @@
     function render() {
         ['S', 'A', 'B', 'C', 'D', 'E', 'F'].forEach(t => document.getElementById(`list-${t}`).innerHTML = "");
         
-        // 데이터 키값 불일치 방지를 위한 안전 장치
-        const rawHeroes = allData[currentRank] || allData[currentRank.toLowerCase()];
+        // 2. 데이터 안전하게 가져오기
+        const rawHeroes = allData[currentRank];
         if (!rawHeroes) {
-            console.error(`${currentRank} 데이터를 찾을 수 없습니다.`);
+            console.warn(`${currentRank} 데이터가 없습니다.`);
             return;
         }
 
         let heroes = currentRole === 'all' ? [...rawHeroes] : rawHeroes.filter(h => roleMap[h.id] === currentRole);
         
+        // 3. 메타 지수 계산 (픽률 6 : 승률 4)
         heroes.forEach(h => {
             const p = parseFloat(h.pickRate) || 0;
             const w = parseFloat(h.winRate) || 0;
-            // 픽률 60% 가중치 메타지수
             h.metaScore = (p * 6) + (w * 0.4); 
         });
 
+        // 점수 순 정렬
         heroes.sort((a, b) => b.metaScore - a.metaScore);
 
+        // 4. 티어 배분
         heroes.forEach(hero => {
             const score = hero.metaScore;
             let targetId;
-            // 정예 S티어 커트라인 150점
+            // S티어 커트라인 (150점)
             if (score >= 150) targetId = "list-S";
             else if (score >= 100) targetId = "list-A";
-            else if (score >= 75) targetId = "list-B";
-            else if (score >= 50) targetId = "list-C";
-            else if (score >= 30) targetId = "list-D";
-            else if (score >= 15) targetId = "list-E";
+            else if (score >= 70) targetId = "list-B";
+            else if (score >= 45) targetId = "list-C";
+            else if (score >= 25) targetId = "list-D";
+            else if (score >= 10) targetId = "list-E";
             else targetId = "list-F";
 
             const roleColor = roleMap[hero.id] === "tank" ? "#4d88ff" : roleMap[hero.id] === "support" ? "#4dff88" : "#ff4d4d";
-            document.getElementById(targetId).innerHTML += `
-                <div class="hero-card" style="border-bottom-color:${roleColor}" onclick="openTrend('${hero.id}', '${hero.name}')">
-                    <img src="./images/${hero.id}.png" class="hero-img" onerror="this.src='https://placehold.co/80?text=NoImg'">
-                    <span class="stats" style="color:${roleColor}">점수 ${score.toFixed(1)}</span>
-                    <div style="font-size:10px; color:#aaa;">픽 ${hero.pickRate}% | 승 ${hero.winRate}%</div>
-                </div>`;
+            const listEl = document.getElementById(targetId);
+            if (listEl) {
+                listEl.innerHTML += `
+                    <div class="hero-card" style="border-bottom-color:${roleColor}" onclick="openTrend('${hero.id}', '${hero.name}')">
+                        <img src="./images/${hero.id}.png" class="hero-img" onerror="this.src='https://placehold.co/80?text=NoImg'">
+                        <span class="stats" style="color:${roleColor}">점수 ${score.toFixed(1)}</span>
+                        <div style="font-size:10px; color:#aaa;">픽 ${hero.pickRate}% | 승 ${hero.winRate}%</div>
+                    </div>`;
+            }
         });
 
         fetch('./analysis.json?t=' + Date.now()).then(r => r.json()).then(data => { document.getElementById('ai-content').innerText = data.analysis; }).catch(() => {});
     }
 
+    // 5. 이벤트 리스너
     document.getElementById('rank-select').addEventListener('change', e => { currentRank = e.target.value; render(); });
     document.querySelectorAll('.filter-btn').forEach(btn => {
         btn.addEventListener('click', function() {
@@ -161,7 +170,7 @@
         document.getElementById('modal-title').innerText = `${heroName} 승률 추세`;
         const labels = historyData.map(d => d.date);
         const data = historyData.map(d => {
-            const rankData = d.data[currentRank] || d.data[currentRank.toLowerCase()];
+            const rankData = d.data[currentRank];
             const h = rankData ? rankData.find(x => x.id === heroId) : null;
             return h ? h.winRate : null;
         });
